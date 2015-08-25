@@ -1,0 +1,41 @@
+#summary One-sentence summary of this page.
+
+= Project Requirements =
+
+- support for ldap and just about everything under the sun:
+http://pear.php.net/package/Auth
+
+- Active Directory integration & PHP
+http://www.developer.com/lang/php/article.php/3100951
+
+- Pear Html Tables: 
+http://pear.php.net/manual/en/package.html.html-table.intro.php
+
+- parameterized queries?:
+http://us.php.net/manual/en/mysqli-stmt.bind-param.php
+
+- IIS Single Sign-on (active Directory): 
+http://p2p.wrox.com/topic.asp?TOPIC_ID=12103
+
+- HTTP Authentication with PHP (note the integrated windows authentication stuff) ^_^: 
+http://us2.php.net/features.http-auth
+
+- still not looking good for the integrated windows authentication stuff:
+http://revision3.com/forum/showthread.php?t=20077
+
+- heres how IWA works: 
+http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/523ae943-5e6a-4200-9103-9808baa00157.mspx?mfr=true
+
+
+= Details =
+
+So probably in order to keep this PHP, and have single sign-on support we'll need to write some .NET wrappers, because it doesn't look like PHP itself has any API's for handling authentication tokens for integrated windows authentication.
+
+
+As for what groups the user belongs to and privaledges we'll need to make raw ldap queries, the _documentation_ for *"Active Directory integration & PHP @ developer.com"* should help us with that.
+
+= Scope = 
+
+First, lets interview the people who are currently using defunctional software, on how they use their software and what their needs are. Starting with documenting what information is needed from students, what information would be useful to have in a database about the students, what they are billed for, payment methods,how they would want their receipt to look, and anything else that comes up that would help us get started on designing database structures.
+
+lets settle for using the kind of data we would get from "authenticating against active directory" using two sets of static credentials that we can select between the two, what group does the user belong to? How broken up should this be? We have several different financial department employees all of which have their own duties to perform that may or may not be subject to change or subject to anyone but a single person, *perhaps a good thing to bring up during said interview.*
